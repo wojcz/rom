@@ -1,0 +1,7 @@
+server:
+  ssl:
+    key-store: file:./config/keystore.jks
+    key-store-password: ENC(dZZVyA/UkIRJjTvRwXfpew==)
+    key-password: ENC(dZZVyA/UkIRJjTvRwXfpew==)
+    trust-store: file:./config/truststore.jks
+    trust-store-password: ENC(dZZVyA/UkIRJjTvRwXfpew==)

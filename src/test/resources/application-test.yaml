@@ -1,0 +1,7 @@
+server:
+  ssl:
+    key-store: classpath:keystore.jks
+    key-store-password: test
+    key-password: test
+    trust-store: classpath:truststore.jks
+    trust-store-password: test

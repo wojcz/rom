@@ -1,0 +1,22 @@
+server:
+  ssl:
+    key-alias: identity
+    client-auth: need
+
+spring:
+  main:
+    banner-mode: LOG
+
+logging:
+  config: file:./config/logback.xml
+
+management:
+  server:
+    port: 8099
+    ssl:
+      enabled: false
+
+jasypt:
+  encryptor:
+    algorithm: PBEWithMD5AndDES
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator
