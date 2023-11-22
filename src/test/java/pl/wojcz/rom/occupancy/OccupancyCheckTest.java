@@ -1,6 +1,7 @@
-package pl.wojcz.rom;
+package pl.wojcz.rom.occupancy;
 
 import org.junit.jupiter.api.Test;
+import pl.wojcz.rom.occupancy.type.OccupancyUsage;
 
 import java.util.*;
 
@@ -34,8 +35,8 @@ public class OccupancyCheckTest {
             potentialGuests.push(p);
 
         //init output objects
-        Usage usagePremium = new Usage("Premium");
-        Usage usageEconomy = new Usage("Economy");
+        OccupancyUsage usagePremium = new OccupancyUsage("Premium");
+        OccupancyUsage usageEconomy = new OccupancyUsage("Economy");
 
         //calculate
         while(!potentialGuests.isEmpty()) {
@@ -67,29 +68,6 @@ public class OccupancyCheckTest {
         //output
         System.out.println(usagePremium);
         System.out.println(usageEconomy);
-    }
-
-    public static class Usage extends Stack<Double> {
-
-        private final String type;
-
-        public Usage(String type) {
-            super();
-            this.type = type;
-        }
-
-        public Double getTotal() {
-            return stream().mapToDouble(Double::doubleValue).sum();
-        }
-
-        @Override
-        public String toString() {
-            return type+"{" +
-                    "quantity=" + size() +
-                    ", total=" + getTotal() +
-                    '}';
-        }
-
     }
 
 }
